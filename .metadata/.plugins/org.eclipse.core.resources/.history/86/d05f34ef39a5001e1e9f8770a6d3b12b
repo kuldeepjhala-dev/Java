@@ -1,0 +1,20 @@
+import java.net.ServerSocket;
+
+public class MyServer {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			ServerSocket soc = new ServerSocket(1234);
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		
+
+	}
+
+}

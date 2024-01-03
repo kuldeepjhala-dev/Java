@@ -1,0 +1,38 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class ChatServerClass {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			ServerSocket soc = new ServerSocket(1234);
+			System.out.println("Server is Online");
+			Socket client = soc.accept();
+			DataInputStream dis = new DataInputStream(client.getInputStream());
+			DataOutputStream dos = new DataOutputStream(client.getOutputStream());
+			String server_chat = null;
+			System.out.println("Hello....");
+			
+			while(true)
+			{
+				if(server_chat == "bye client") {
+					break;
+				}
+				
+			}
+			soc.close();
+			dis.close();
+			dos.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Server : " + e.getMessage());
+		}
+		
+	}
+
+}

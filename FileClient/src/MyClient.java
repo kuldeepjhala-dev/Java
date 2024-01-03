@@ -1,0 +1,50 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.FileWriter;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class MyClient {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			Socket soc = new Socket("localhost", 1234);
+			
+			DataInputStream dis = new DataInputStream(soc.getInputStream());
+			DataOutputStream dos = new DataOutputStream(soc.getOutputStream());
+			
+			System.out.println("Please enter file name : ");
+			
+			Scanner scan = new Scanner(System.in);
+			
+			String FileName = scan.next();		
+			dos.writeUTF(FileName);
+			
+			String msg = dis.readUTF();
+			
+			if(msg.equals("FILE EXISTS"))
+			{
+				String data= dis.readUTF();
+				
+				FileWriter fw = new FileWriter("src//"+FileName);
+				fw.write(data);
+				fw.close();
+				
+			}
+			else
+			{
+				System.out.println("\n from server  ="+msg);
+			}
+			
+			soc.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Client : " + e.getMessage());
+		}
+
+	}
+
+}

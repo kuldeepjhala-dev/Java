@@ -1,0 +1,16 @@
+import java.net.DatagramSocket;
+
+public class MyReceiver {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			DatagramSocket reciever = new DatagramSocket(1234);
+		}
+		catch(Exception e)
+		{
+			System.out.println("MyReceiver : " + e.getMessage());
+		}	
+	}
+}

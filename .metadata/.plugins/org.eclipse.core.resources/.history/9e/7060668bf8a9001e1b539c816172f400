@@ -1,0 +1,19 @@
+import java.net.DatagramSocket;
+
+public class MyReceiverClass {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			DatagramSocket receiver = new DatagramSocket();
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Receiver-Error : " + e.getMessage());
+		}
+
+	}
+
+}

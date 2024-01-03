@@ -1,0 +1,17 @@
+
+public class MySenderClass {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Sender-Error : " + e.getMessage());
+		}
+
+	}
+
+}

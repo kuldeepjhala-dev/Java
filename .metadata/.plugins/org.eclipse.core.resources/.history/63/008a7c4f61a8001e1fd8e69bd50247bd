@@ -1,0 +1,32 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class ChatClientClass {
+	
+	public static void main(String[] args) {	
+		try
+		{
+			Socket soc = new Socket("localhost",1234);
+			
+			DataInputStream dis = new DataInputStream(soc.getInputStream());
+			DataOutputStream doc = new DataOutputStream(soc.getOutputStream());
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.println("Client is Online");
+			while(true)
+			{
+				
+			}
+			
+			soc.close();
+			dis.close();
+			doc.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Server : " + e.getMessage());
+		}	
+	}
+}

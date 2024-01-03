@@ -1,0 +1,39 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.ServerSocket;
+import java.net.Socket;
+
+public class MyServer {
+
+	public static void main(String[] args) {
+
+		try
+		{
+			ServerSocket ser = new ServerSocket(2345);
+			
+			System.out.println("\n\n Server is waiting.....");
+			
+			Socket client = ser.accept();
+			
+			System.out.println("\n\n Client Connected.....");
+			
+			DataInputStream dis = new DataInputStream(client.getInputStream());
+			DataOutputStream dos = new DataOutputStream(client.getOutputStream());
+			
+			int a = dis.read();
+			int b = dis.read();
+			
+			int c = a + b;
+			
+			dos.write(c);
+			
+			ser.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Server : " + e.getMessage());
+		}
+
+	}
+
+}

@@ -1,0 +1,38 @@
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.nio.charset.StandardCharsets;
+
+public class MyReceiverClass {
+	public static void main(String[] args) {
+		try
+		{
+			DatagramSocket reciever = new DatagramSocket(1234);
+			byte b[] = new byte[1024];
+			String msg = "";
+			DatagramPacket pack = null;
+			
+			pack = new DatagramPacket(b, b.length);
+			reciever.receive(pack);
+			b = pack.getData();
+			msg = new String(b);
+			msg = msg.trim();
+			
+			StringBuffer sb_msg = new StringBuffer(msg);
+			
+			sb_msg = sb_msg.reverse();
+			System.out.print(sb_msg);
+			msg = new String(sb_msg);
+			b = msg.getBytes();
+			
+			InetAddress ip = InetAddress.getByName("localhost");
+			pack = new DatagramPacket(b,b.length,ip,4321);
+			reciever.send(pack);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Reciever-class-error : " + e.getMessage());
+		}
+
+	}
+}

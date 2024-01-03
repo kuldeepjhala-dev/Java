@@ -1,0 +1,41 @@
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class MyClient {
+
+	public static void main(String[] args) 
+	{
+		try
+		{
+			Socket soc = new Socket("localhost", 2345);
+			DataInputStream dis = new DataInputStream(soc.getInputStream());
+			DataOutputStream dos = new DataOutputStream(soc.getOutputStream());
+			
+			System.out.println("Enter no - 1: ");
+			
+			Scanner scan = new Scanner(System.in);
+			int a = scan.nextInt();
+			dos.writeInt(a);
+			
+			System.out.println("Enter no - 2: ");
+			
+			int b = scan.nextInt();
+			dos.writeInt(b);
+			
+			int ans = dis.readInt();
+			System.out.println("Ans = " + ans);
+			
+			soc.close();
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+		
+	}
+
+}

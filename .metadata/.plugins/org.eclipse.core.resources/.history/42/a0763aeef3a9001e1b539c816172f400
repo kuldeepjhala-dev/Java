@@ -1,0 +1,20 @@
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+
+public class MyReceiverClass {
+	public static void main(String[] args) {
+		try
+		{
+			DatagramSocket reciever = new DatagramSocket(1234);
+			byte b[] = new byte[1024];
+			String msg = "";
+			DatagramPacket pack = null;
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Reciever-class-error : " + e.getMessage());
+		}
+
+	}
+}

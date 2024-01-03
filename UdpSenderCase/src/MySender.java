@@ -1,0 +1,40 @@
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.util.Scanner;
+
+public class MySender {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			DatagramSocket sender = new DatagramSocket(4321);
+			byte b[] = new byte[1024];
+			String msg = "";
+			DatagramPacket pack = null;
+			Scanner scan = new Scanner(System.in);
+			
+			System.out.print("Enter Message : ");
+			msg = scan.nextLine();
+			b = msg.getBytes();
+			InetAddress ip = InetAddress.getByName("localhost");
+			
+			pack = new DatagramPacket(b, b.length, ip, 1234);
+			sender.send(pack);
+			
+			pack = new DatagramPacket(b, b.length);
+			sender.receive(pack);
+			b = pack.getData();
+			msg = new String(b);
+			
+			System.out.print("\nConverted : " + msg);
+		}
+		catch(Exception e)
+		{
+			System.out.println("MySender : " + e.getMessage());
+		}
+
+	}
+
+}

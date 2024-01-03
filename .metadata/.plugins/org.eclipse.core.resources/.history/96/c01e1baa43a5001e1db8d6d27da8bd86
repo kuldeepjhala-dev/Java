@@ -1,0 +1,22 @@
+import java.net.ServerSocket;
+
+public class MyServer {
+
+	public static void main(String[] args) {
+		
+		try
+		{
+			ServerSocket ser = new ServerSocket(1234);
+			System.out.println("Server Created.");
+			ser.accept();
+			System.out.println("Client Connected.");
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println("Server : " + e.getMessage());
+		}
+
+	}
+
+}
