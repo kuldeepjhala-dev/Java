@@ -7,6 +7,7 @@ interface Addition extends Remote {
 	String rev(String s) throws RemoteException;
 	String toUpper(String s) throws RemoteException;
 }
+
 public class MyClient {
 
 	public static void main(String[] args) {
