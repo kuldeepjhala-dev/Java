@@ -1,6 +1,7 @@
 import java.io.FileInputStream;
 import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,8 +10,6 @@ import java.sql.Statement;
 import java.sql.Types;
 import java.util.Enumeration;
 import java.util.Scanner;
-
-import com.mysql.jdbc.Driver;
 
 class DatabaseOperation
 {

@@ -13,14 +13,18 @@ public class MyChatClient {
 		
 		try
 		{
+//			System.out.println("5");
 			iChat ic = (iChat) Naming.lookup("rmi://localhost:1122/myUser");
-			for(int i = 0; i < 10; i++) 
-			{
-				Scanner sc = new Scanner(System.in);
-				String clientMessage = sc.nextLine();
-				String userMessage = ic.message(clientMessage);
-				System.out.println(userMessage);
-			}
+			Scanner sc = new Scanner(System.in);
+//			System.out.println("6");
+//			System.out.println("7");
+			System.out.println("Client input: ");
+			String clientMessage = sc.nextLine();
+			String serverMessage = ic.message(clientMessage);
+//			System.out.println("8");
+			System.out.println("Server : " + serverMessage);
+//			System.out.println("9");
+			
 		}
 		catch(Exception e)
 		{
