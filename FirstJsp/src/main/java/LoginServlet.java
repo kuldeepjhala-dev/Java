@@ -12,8 +12,16 @@ public class LoginServlet extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+
+		String checkField = request.getParameter("check");
+
+		if (checkField.equals("keep me")) {
+			System.out.println("checked");
+		} else if (checkField.equals(null)) {
+			System.out.println("check null");
+		} else {
+			System.out.println("Not checked");
+		}
 		request.getRequestDispatcher("login.jsp").forward(request, response);
-
 	}
-
 }

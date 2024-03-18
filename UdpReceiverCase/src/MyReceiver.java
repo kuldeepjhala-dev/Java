@@ -25,7 +25,6 @@ public class MyReceiver {
 			
 			pack = new DatagramPacket(b, b.length,ip,4321);
 			reciever.send(pack);
-			
 		}
 		catch(Exception e)
 		{

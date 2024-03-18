@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<books>
+	<book>
+		<name> cpp </name>
+		<author> balagurusamy </author>
+		<price> 200 </price>
+	</book>
+	<book>
+		<name> JAVA </name>
+		<author> HERBERT </author>
+		<price> 400 </price>
+	</book>
+	<book>
+		<name> WAD </name>
+		<author> MEET </author>
+		<price> 20 </price>
+	</book>
+	<book>
+		<name> TOC </name>
+		<author> KRUSHAL </author>
+		<price> 250 </price>
+	</book>
+	<book>
+		<name> ANDROID </name>
+		<author> APURVA </author>
+		<price> 600 </price>
+	</book>
+
+
+</books>
+
+
